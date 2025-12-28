@@ -65,6 +65,7 @@ static inline void _put_pixel( uint16_t c) {
 }
 
 void lcdSendInitCmd_SPILCD() {
+#ifdef SPILCD_INIT_CODE
   // Send initialization commands to ST7735
   const unsigned char *cmd = SPILCD_INIT_CODE;
   while(cmd[CMDINDEX_DATALEN]!=255) {
@@ -76,6 +77,7 @@ void lcdSendInitCmd_SPILCD() {
     jshPinSetValue(_pin_cs, 1);
     cmd += 3 + cmd[CMDINDEX_DATALEN];
   }
+#endif
 }
 
  /// flush chunk buffer to screen
