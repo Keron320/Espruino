@@ -38,7 +38,7 @@ info = {
      'CRYPTO','SHA256','SHA512',
      'TLS',
      'NEOPIXEL',
-     'LCD_SPI_UNBUF',
+    'LCD_SPI_UNBUF',
      'JIT'
     
    ],
