@@ -25,8 +25,9 @@ info = {
  'bootloader' : 1,
  'binary_name' : 'espruino_%v_wifi.bin',
  'binaries' : [
-  { 'filename' : 'espruino_%v_wifi.bin', 'description' : "Normal Espruino WiFi build"},
- ],
+ { 'filename' : 'espruino_%v_wifi.bin', 'description' : 'Normal Espruino WiFi build'},
+ { 'filename' : 'espruino_%v_wifi_combined.bin', 'description' : 'WiFi build (bootloader+app)'},
+],
  'build' : {
    'optimizeflags' : '-Os',
    'libraries' : [
