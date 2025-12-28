@@ -25,15 +25,15 @@
 #include "jswrap_graphics.h"
 #include "jshardware.h"
 
-static Pin _pin_mosi;
-static Pin _pin_clk;
+static Pin _pin_mosi __attribute__((unused));
+static Pin _pin_clk  __attribute__((unused));
 static Pin _pin_cs;
 static Pin _pin_dc;
 static int _colstart;
 static int _rowstart;
 static int _lastx=-1;
 static int _lasty=-1;
-static uint16_t _chunk_buffer[LCD_SPI_UNBUF_LEN];
+static uint16_t _chunk_buffer[LCD_SPI_UNBUF_LEN] __attribute__((unused));
 static int _chunk_index = 0;
 IOEventFlags _device;
 
@@ -266,6 +266,7 @@ void lcd_spi_unbuf_setPixel(JsGraphics *gfx, int x, int y, unsigned int col) {
 }
 
 void lcd_spi_unbuf_fillRect(JsGraphics *gfx, int x1, int y1, int x2, int y2, unsigned int col) {
+  NOT_USED(gfx);
   int pixels = (1+x2-x1)*(1+y2-y1);
   uint16_t color = (uint16_t)((col>>8) | (col<<8)); // endianness
   jshPinSetValue(_pin_cs, 0);
