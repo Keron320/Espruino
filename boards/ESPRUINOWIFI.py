@@ -46,7 +46,7 @@ info = {
      'DEFINES+=-DESPR_OFFICIAL_BOARD', # Don't display the donations nag screen
      'DEFINES+=-DESPR_OFFICIAL_BOARD',
      'DEFINES+=-DNO_VIRTUAL_PIN',
-     'DEFINES+=-DLCD_SPI_UNBUF_LEN=64',
+     'DEFINES+=-DSPISENDMANY_BUFFER_SIZE=64',
      'CFLAGS+=-Wno-error=return-type',
      'DEFINES+=-DUSE_USB_OTG_FS=1 -DESPRUINOWIFI',
      'DEFINES+=-DPIN_NAMES_DIRECT=1', # Package skips out some pins, so we can't assume each port starts from 0
